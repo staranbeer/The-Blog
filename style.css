@@ -1,0 +1,196 @@
+/* #86DC96 */
+*{
+    font-family: 'Montserrat','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #5a5454;
+}
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 150px 1fr 1fr 1fr 150px 1fr;
+    grid-template-rows: 80px auto 80px;
+    justify-content: center;
+    grid-template-areas: "header header header header header sidebar"
+    ". posts posts posts . sidebar"
+    ". pagination pagination pagination . sidebar";
+
+}
+
+.pagination{
+    grid-area: pagination;
+    justify-self: center;
+}
+.pagination button{
+    min-width: 40px;
+    padding: 8px;
+    margin: 5px;
+    font-size: 1.3em;
+    font-weight: 700;
+}
+
+h1,h2,h3,h4,h5,h6{
+    color: #5a5454;
+    font-family: 'Oswald';
+    letter-spacing: .04em;
+}
+
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    grid-area: header;    
+    box-shadow: 0 0 4px 0 lightgray;
+}
+
+aside{
+    grid-area: sidebar;
+    box-shadow: 0 0 8px 0 lightgray;
+    z-index: 2;
+    height: 100vh;
+}
+button{
+    background-color: white;
+    border: 1.5px solid #86DC96;
+    font-size: 1em;
+}
+
+button:hover{
+    box-shadow: -2px 3px 0 0 #86DC96;
+}
+.profile-info{
+    justify-self: start;
+    display: flex;
+    border: 1px solid #86DC96;
+    align-items: center;
+    padding: 20px;
+}
+.blog-profile-image{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.blog-username{
+    color: #5a5454;
+    padding: 20px;
+}
+.useful-links{
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 15px;
+}
+
+.useful-links a{
+    text-decoration: none;
+    color: #5a5454;
+    font-weight: 600;
+}
+.search input{
+    display: block;
+    width: 85%;
+    margin: 10px auto;
+    height: 30px;
+    padding: 10px;
+    border: 1px solid #86DC96;
+}
+.search button{
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+}
+.tags{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.tags-headline{
+    padding: 30px;
+    font-weight: 600;
+}
+.tags button{
+    padding: 10px 14px;
+    margin: 4px;
+    color: #5a5454;
+    border-radius: 1px;
+}
+
+.social-media{
+    display: flex;
+    justify-content: center;
+    padding: 8px 10px;
+    
+    background-color: #86DC96;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.social-media img{
+    padding: 5px 10px;
+    width: 23px;
+}
+main{
+    margin-top: 50px;
+    grid-area: posts;
+}
+h2{
+    margin: 0;
+    padding: 10px;
+}
+.left-header{
+    display: flex;
+}
+.right-header{
+    display: flex;
+}
+
+h3{
+  margin: 0;
+  padding: 10px;  
+}
+
+h3.signup{
+    border: 1px solid #86DC96;
+    padding: 10px 18px;
+    border-radius: 5px;
+}
+
+.post{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "post-image post-title post-title"
+    "post-image post-description post-description";
+    
+    margin: 40px auto;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px 0 lightgray;
+    width: 85%;
+}
+.post-image{
+    padding: 20px;
+    height: 200px;
+    grid-area: post-image;
+    max-width: 200px;
+    align-self: center;
+    justify-self: center;
+}
+
+.post-title{
+    grid-area: post-title;
+    align-self: end;
+    font-size: 3em;
+    letter-spacing: 0.001em;
+}
+.post-description{
+    grid-area: post-description;
+    margin: 5px;
+    padding: 10px;
+    width: 70%;
+    color: #858383;
+}
