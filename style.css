@@ -1,8 +1,12 @@
-/* #86DC96 */
+/* setting the default color and font family for the whole page */
+
 *{
-    font-family: 'Montserrat','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #5a5454;
+    font-family: 'Montserrat','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+/* overriding default styles*/
+
 body{
     margin: 0;
     padding: 0;
@@ -14,22 +18,11 @@ body{
     grid-template-columns: 150px 1fr 1fr 1fr 150px 1fr;
     grid-template-rows: 80px auto 80px;
     justify-content: center;
-    grid-template-areas: "header header header header header sidebar"
+    grid-template-areas: 
+    "header header header header header sidebar"
     ". posts posts posts . sidebar"
     ". pagination pagination pagination . sidebar";
 
-}
-
-.pagination{
-    grid-area: pagination;
-    justify-self: center;
-}
-.pagination button{
-    min-width: 40px;
-    padding: 8px;
-    margin: 5px;
-    font-size: 1.3em;
-    font-weight: 700;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -38,159 +31,255 @@ h1,h2,h3,h4,h5,h6{
     letter-spacing: .04em;
 }
 
+/******************************** The header **********************************/
+
 .header-container{
+    padding: 0 50px;
+    box-shadow: 0 0 4px 0 lightgray;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 50px;
+    
     grid-area: header;    
-    box-shadow: 0 0 4px 0 lightgray;
 }
 
-aside{
-    grid-area: sidebar;
-    box-shadow: 0 0 8px 0 lightgray;
-    z-index: 2;
-    height: 100vh;
+h2 a{
+    text-decoration: none;
+    font-family: Oswald, Montserrat, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    margin: 0;
+    padding: 10px;
 }
-button{
+
+.left-header{
+    display: flex;
+    justify-content: center;
+}
+.right-header{
+    display: flex;
+}
+
+.blog-logo{
+    padding: 5px;
+    width: 100px;
+}
+.login{
+    margin: 0 10px;
+    font-size: 1.2em;
+    text-decoration: none;
+    font-family: Oswald, Montserrat, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}  
+h3.signup a{
+    text-decoration: none;
+    font-family: Oswald;
+    padding: 10px 18px;
+    margin-left: 10px;
+    border-radius: 2px;
+    font-size: 1.2em;
+    border: 1px solid #86DC96;
+}
+
+h3.signup a:hover{
+    box-shadow: -3px 4px 0 1px #86DC96;
+}
+
+
+/********************************** the main content of the page  *********************/
+
+main{
+    margin-top: 50px;
+    grid-area: posts;
+}
+
+.post{
+    width: 85%;
+    
+    display: flex;
+    padding: 10px;
+    margin: 40px auto;
+    
+    border-radius: 6px;
+    box-shadow: 0 0 5px 0 rgb(218, 213, 213);
+}
+
+.post:hover{
+    transition: box-shadow .7s;
+    box-shadow: 0 0 17px 3px lightgray;
+}
+
+.post-tag{
+    padding: 4px 10px;
+    color: #747474;
+}
+
+.post-image{
+    height: 250px;
+    padding: 20px;
+    max-width: 250px;   
+}
+
+.post-content{
+    max-height: 250px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.post-title{
+    margin: 0;
+    
+    padding: 0 10px;
+    font-size: 3em;
+    letter-spacing: 0.001em;
+}
+
+.post-description{
+    padding: 10px;
+    margin: 5px;
+
+    color: #858383;
+}
+
+
+/******************************** The sidebar **********************************/
+
+
+aside{
+    box-shadow: 0 0 8px 0 lightgray;
+    height: 100vh;
+    grid-area: sidebar;
+}
+
+
+.profile-info{
+    padding: 20px;
+    background-color: #86DC96;
+    border: 20px solid #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blog-profile-image{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+}
+
+.useful-links{
+    padding: 30px 15px;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.useful-links a{
+    padding: 10px 15px;
+    margin: 4px;
+    color: #888787;
+
+    border: 1px solid #86DC96;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.useful-links a:hover{
+    box-shadow: -3px 4px 0 1px #86DC96;
+    color: #4bad5d;
+    font-weight: 700;
+}
+
+aside button{
     background-color: white;
     border: 1.5px solid #86DC96;
     font-size: 1em;
 }
 
-button:hover{
-    box-shadow: -2px 3px 0 0 #86DC96;
-}
-.profile-info{
-    justify-self: start;
-    display: flex;
-    border: 1px solid #86DC96;
-    align-items: center;
-    padding: 20px;
-}
-.blog-profile-image{
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-}
-.blog-username{
-    color: #5a5454;
-    padding: 20px;
-}
-.useful-links{
-    display: flex;
-    justify-content: space-around;
-    padding: 30px 15px;
+aside button:hover{
+    box-shadow: -3px 3px 0 0.5px #86DC96;
+    color: #4bad5d;
+    font-weight: 500;
 }
 
-.useful-links a{
-    text-decoration: none;
-    color: #5a5454;
-    font-weight: 600;
-}
 .search input{
     display: block;
     width: 85%;
-    margin: 10px auto;
     height: 30px;
+    
+    font-size: .9em;
     padding: 10px;
+    margin: 10px auto;
     border: 1px solid #86DC96;
 }
 .search button{
     display: block;
     width: 90%;
-    margin: 10px auto;
+
     padding: 10px;
+    margin: 10px auto;
 }
+
+.tags-headline{
+    color: #858383;
+    padding: 30px;
+    font-weight: 600;
+}
+
 .tags{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-.tags-headline{
-    padding: 30px;
-    font-weight: 600;
-}
+
 .tags button{
     padding: 10px 14px;
     margin: 4px;
-    color: #5a5454;
+    color: #777474;
     border-radius: 1px;
 }
 
 .social-media{
     display: flex;
     justify-content: center;
-    padding: 8px 10px;
-    
-    background-color: #86DC96;
     position: absolute;
     right: 0;
     bottom: 0;
+    
+    padding: 8px 10px;
+    
+    background-color: #86DC96;
 }
+
 .social-media img{
-    padding: 5px 10px;
+    padding: 3px 5px;
+    margin: 4px;
     width: 23px;
 }
-main{
-    margin-top: 50px;
-    grid-area: posts;
-}
-h2{
-    margin: 0;
-    padding: 10px;
-}
-.left-header{
-    display: flex;
-}
-.right-header{
-    display: flex;
-}
 
-h3{
-  margin: 0;
-  padding: 10px;  
-}
 
-h3.signup{
-    border: 1px solid #86DC96;
-    padding: 10px 18px;
-    border-radius: 5px;
-}
+/***************************************** pagination  ******************************/
 
-.post{
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: "post-image post-title post-title"
-    "post-image post-description post-description";
-    
-    margin: 40px auto;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 0 15px 0 lightgray;
-    width: 85%;
-}
-.post-image{
-    padding: 20px;
-    height: 200px;
-    grid-area: post-image;
-    max-width: 200px;
-    align-self: center;
+.pagination{
     justify-self: center;
+    grid-area: pagination;
+}
+.pagination button{
+    min-width: 45px;
+    min-height: 45px;
+    padding: 8px;
+    margin: 5px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #86DC96;
+    font-size: 1.3em;
+    font-weight: 700;
 }
 
-.post-title{
-    grid-area: post-title;
-    align-self: end;
-    font-size: 3em;
-    letter-spacing: 0.001em;
-}
-.post-description{
-    grid-area: post-description;
-    margin: 5px;
-    padding: 10px;
-    width: 70%;
-    color: #858383;
+.pagination button:hover{
+    color: #4bad5d;
+    box-shadow: -2px 3px 0 1px #86DC96;
 }

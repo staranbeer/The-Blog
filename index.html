@@ -8,56 +8,67 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,300&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet"> 
 </head>
 <body>
+
+    <!-- enclosing different parts of the page in a grid container -->
+
     <div class="grid-container">
         <header class="header-container">
             <div class="left-header">
-                <img src="#" alt="">
-                <h2>The Blog</h2>
+                <a href="#"><img class="blog-logo" src="/images/logo-13.svg" alt=""></a>
+                <h2> <a href="#">The Blog</a></h2>
             </div>
             <div class="right-header">
-                <h3>Login</h3>
-                <h3 class="signup">Sign Up</h3>
+                <h3><a class="login" href="#">Login</a></h3>
+                <h3 class="signup"><a href="#">Sign Up</a></h3>
             </div>
         </header>
-    
+ 
+        <!-- the container for the main content(all of the blog posts) -->
+
         <main class="posts">
             <div class="post">
-                <img class="post-image" src="/images/1.svg.svg" alt="">
-                <h3 class="post-title">How to code</h3>
-                <p class="post-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum doloremque accusamus, quis praesentium animi odio in voluptate nostru?</p>
+                <div class="post-image-container">
+                    <img class="post-image" src="/images/1.svg.svg" alt="">
+                </div>
+                
+                <div class="post-content">
+                    <p class="post-tag">On Web development</p>
+                    <h3 class="post-title">How to code</h3>
+                    <p class="post-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum doloremque accusamus, quis praesentium animi odio in voluptate nostru?</p>
+                </div> 
             </div>
+            
             <div class="post">
-                <img class="post-image" src="/images/4.svg" alt="">
-                <h3 class="post-title">What is Html?</h3>
-                <p class="post-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum doloremque accusamus, quis praesentium animi odio in voluptate nostru?</p>
+                <div class="post-image-container">
+                    <img class="post-image" src="/images/2.svg.svg" alt="">
+                </div>
+                
+                <div class="post-content">
+                    <p class="post-tag">On Web design</p>
+                    <h3 class="post-title">Programming</h3>
+                    <p class="post-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum doloremque accusamus, quis praesentium animi odio in voluptate nostru?</p>
+                </div> 
             </div>
+
             <div class="post">
-                <img class="post-image" src="/images/3.svg" alt="">
-                <h3 class="post-title">Can you Code?</h3>
-                <p class="post-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum doloremque accusamus, quis praesentium animi odio in voluptate nostru?</p>
-            </div>
-            <div class="post">
-                <img class="post-image" src="/images/2.svg.svg" alt="">
-                <h3 class="post-title">Stuff</h3>
-                <p class="post-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum doloremque accusamus, quis praesentium animi odio in voluptate nostru?</p>
-            </div>
-            <div class="post">
-                <img class="post-image" src="/images/4.svg" alt="">
-                <h3 class="post-title">Css and its perks</h3>
-                <p class="post-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum doloremque accusamus, quis praesentium animi odio in voluptate nostru?</p>
-            </div>
-            <div class="post">
-                <img class="post-image" src="/images/1.svg.svg" alt="">
-                <h3 class="post-title">Programming</h3>
-                <p class="post-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum doloremque accusamus, quis praesentium animi odio in voluptate nostru?</p>
+                <div class="post-image-container">
+                    <img class="post-image" src="/images/4.svg" alt="">
+                </div>
+                
+                <div class="post-content">
+                    <p class="post-tag">On Web development</p>
+                    <h3 class="post-title">Html</h3>
+                    <p class="post-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum doloremque accusamus, quis praesentium animi odio in voluptate nostru?</p>
+                </div> 
             </div>
          
         </main>
     
+        <!-- container for the sidebar -->
+
         <aside class="sidebar">
             <div class="profile-info">
-                <img class="blog-profile-image" src="/images/social-1_logo-github.svg" alt="">
-                <h2 class="blog-username">Taranbeer Singh</h2>
+                <a href="#"><img class="blog-profile-image" src="/images/profile-image.svg" alt=""></a>
             </div>
             
             <div class="useful-links">
@@ -70,6 +81,7 @@
                 <input type="text" placeholder="Search">
                 <button>Search</button>
             </div>
+        
             <div class="tags-headline"> Search by tags : </div>
             <div class="tags">
                 <button>Programming</button>
@@ -82,23 +94,21 @@
             </div>
     
             <div class="social-media">
-                <img src="/images/icons/social-1_logo-github.svg" alt="">
-                <img src="/images/icons/social-1_logo-codepen.svg" alt="">
-                <img src="/images/icons/social-1_logo-google-plus.svg" alt="">
-                <img src="images/icons/social-1_logo-linkedin.svg" alt="">
+                <a href="#"><img src="/images/icons/social-1_logo-github.svg" alt=""></a>
+                <a href="#"><img src="/images/icons/social-1_logo-codepen.svg" alt=""></a>
+                <a href=""><img src="/images/icons/social-1_logo-google-plus.svg" alt=""></a>
+               <a href=""><img src="images/icons/social-1_logo-linkedin.svg" alt=""></a>
             </div>
         </aside>
         
+        <!-- the pagination -->
+        
         <div class="pagination">
-            <button><</button>
-            <button>1</button>
-            <button>></button>
+            <button id="previousPage">&#60</button>
+            <button id="currentPage">1</button>
+            <button id="nextPage">&#62</button>
         </div>
     </div>
 
-
-    <footer>
-
-    </footer>
 </body>
 </html>
