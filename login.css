@@ -1,0 +1,93 @@
+/******************************* default styles **********************************/
+
+*{
+    font-family: 'Montserrat','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input{
+    padding: 0;
+    margin: 0;
+}
+
+/* *************************** page container *************************************/
+.container{
+    height: 100vh;
+    width: 100vw; 
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* login image */
+
+#login-image{
+    width: 600px;
+}
+
+/* login form */
+
+.form-container{
+    width: 600px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-container input{
+    color: #6d6d6d;
+    border: 1px solid #86DC96;
+
+    padding: 10px 15px;
+    margin: 6px auto;
+
+}
+
+.form-container input:focus{
+    color: #6d6d6d;
+    box-shadow: -3px 3px 0 2px #86DC96 ;
+}
+
+.form-container button{
+    color: #ffffff;
+    background-color: #86DC96;
+    border: 2px solid #86DC96;
+
+    padding: 11px 45px;
+    margin: 15px auto 2px auto;
+
+    font-size: 1.05em;
+    font-weight: 700;
+    letter-spacing: .06em;
+}
+
+
+.form-container button:hover{
+    color: #86DC96;
+    background-color: white;
+    border: 2px solid #86DC96;
+   
+    transition: background-color .8s;
+}
+
+.form-container p{
+    padding: 10px;
+    margin: 0 auto;
+ 
+    color: #6d6d6d;
+}
+
+.form-container p a{
+    color: #86DC96;
+    padding: 3px;
+    font-weight: 600;
+}
