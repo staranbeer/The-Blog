@@ -87,6 +87,43 @@ h3.signup a:hover{
 
 /********************************** the main content of the page  *********************/
 
+.popular-posts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popular-post{
+    padding: 30px;
+    margin: 10px 15px;
+
+    border-radius: 5px;
+    box-shadow: 0 0 2px 1px lightgray;
+}
+
+.popular-post:hover{
+    box-shadow: 0 0 11px 5px lightgray;
+    
+    transition: box-shadow .7s;
+}
+
+.popular-post-image{
+    max-height: 150px;
+    display: block;
+    margin: 7px auto;
+    padding: 5px;
+}
+
+.popular-post-title{
+    margin-top: 5px;
+}
+.popular-post-description{
+    text-align: justify;
+    color: #747474;
+}
+
+
+
 main{
     margin-top: 50px;
     grid-area: posts;
