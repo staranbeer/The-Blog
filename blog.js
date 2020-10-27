@@ -1,68 +1,81 @@
-const url = "";
-
-const blogContainer = document.getElementById('post-container')
-
-const subheadingButton = document.getElementById('createSubheading')
-const paragraphButton = document.getElementById('createParagraph')
-const imageButton = document.getElementById('createImage')
-const conclusionButton = document.getElementById('createConclusion')
+const heading  = document.getElementById('heading')
+const container = document.getElementById('post-container')
+const createParagraph = document.getElementById('createParagraph')
+const createSubheading = document.getElementById('createSubheading')
+const createImage = document.getElementById('createImage')
+const createConclusion = document.getElementById('createConclusion')
 const done = document.getElementById('done')
 
-var conclusionCounter = 0;
-var imageCounter = 0
-var subheadingCounter = 0;
-var paragraphCounter = 0;
+function createElement(e){
+    if(e.target.id == "createSubheading"){
 
-subheadingButton.addEventListener('click', ()=>{
-    const input = document.createElement('input')
-    input.className = "subheading"
-    input.name = "Subheading" + subheadingCounter
-    input.placeholder = "Sub heading"
-    subheadingCounter++
-    blogContainer.appendChild(input)
-})
+        const subheading = document.createElement('h3')
+        subheading.className = "subheading"
+        subheading.contentEditable = "true"
+        
+        container.appendChild(subheading)
 
+    }else if(e.target.id == "createParagraph"){
 
+        const paragraph = document.createElement('p')
+        paragraph.className = "paragraph"
+  
+        container.appendChild(paragraph)
 
-paragraphButton.addEventListener('click', ()=>{
-    const input = document.createElement('textarea')
-    input.className = "paragraph"
-    input.placeholder = "Paragraph"
-    input.name = "paragraph" + paragraphCounter
-    paragraphCounter++
-    blogContainer.appendChild(input)
-})
+    }else if(e.target.id == "createImage"){
+      
+        const image = document.createElement('input')
+        image.className = "image"
+        image.type = 'file'
+        
+        container.appendChild(image)
+    }else if(e.target.id = "createConclusion"){
 
+        const conclusion = document.createElement('p')
+        conclusion.className = "conclusion"
+        conclusion.contentEditable = "true"
 
-imageButton.addEventListener('click', ()=>{
-    const input = document.createElement('input')
-    input.type = "file"
-    input.className = "image"
-    input.name = "image" + imageCounter
-    imageCounter++
-    blogContainer.appendChild(input)
-})
+        container.appendChild(conclusion)
 
-conclusionButton.addEventListener('click', ()=>{
-    const input = document.createElement('textarea')
-    input.className = "main-summary"
-    input.placeholder = "Conclusion"
-    input.name = "conclusion" + conclusionCounter
-    conclusionCounter++
-    blogContainer.appendChild(input)
-})
+    }
+}
 
 
+createParagraph.addEventListener('click', createElement)
+createSubheading.addEventListener('click', createElement)
+createImage.addEventListener('click', createElement)
+createConclusion.addEventListener('click', createElement)
 
-done.addEventListener('click', ()=>{
-   
-       let form = new FormData(blogContainer)
-       for(var pair of form.entries()) {
-        console.log(pair); 
-     }
-     
-        fetch( url,{
-            method: 'POST',
-            body: form
-        } )
-    });
+
+function send(){
+
+    function something(stuff){
+        stuff.data  = ''
+        while(container.firstElementChild){
+            
+            stuff.data += container.firstElementChild.outerHTML
+            container.removeChild(container.firstElementChild)
+        }      
+        return stuff
+    }
+
+    const stuff = {}
+    console.log(JSON.stringify(something(stuff)))
+    
+}
+
+
+
+done.addEventListener('click', send)
+// container.childNodes.addEventListener('click',  something )
+
+// e.target.addEventListener('input', function(){
+//     if(e.target.textContent.trim() == ''){
+//         e.target.style.borderBottom = "2px solid gray"
+//     }
+//     else if(e.target.textContent.trim() !== ''){
+//         e.target.style.borderBottom = '2px solid white'
+//     }else{
+//         console.log('weird')
+//     }
+// })
